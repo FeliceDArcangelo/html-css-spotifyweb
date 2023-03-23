@@ -27,6 +27,11 @@ html{
     justify-content: space-between;
 }
 
+.left-menu a:link, .left-menu a:visited{
+    color: rgb(113, 113, 113);
+    text-decoration: none;
+}
+
 .menu-logo{
     width: 70%;
     padding-bottom: 1.5em;
@@ -34,6 +39,9 @@ html{
 
 .search-menu li{
     list-style: none;
+}
+
+.search-menu li a{
     display: flex;
     align-items: center;
     gap: .5em;
@@ -43,6 +51,11 @@ html{
 .search-menu li svg{
     fill: rgb(113, 113, 113);
     width: 25px;
+}
+
+.search-menu li a:hover svg, .search-menu li a:hover div{
+    fill: white;
+    color: white;
 }
 
 .playlist-container{
@@ -77,9 +90,22 @@ html{
     font-size: 2.2rem;
 }
 
+.crea-playlist:hover .plus-icon{
+    background-color: white;
+} 
+
+.crea-playlist:hover div{
+    color: white;
+}    
+    
 .playlist-name li{
     list-style: none;
     padding-bottom: 1.5em;
+}
+
+.playlist-name li a:hover{
+    color: white;
+    cursor: pointer;
 }
 
 .profile-install{
@@ -95,6 +121,11 @@ html{
 .install svg{
     fill: rgb(113, 113, 113);
     width: 15px;
+}
+
+.install:hover svg, .install:hover div{
+    fill: white;
+    color: white;
 }
 
 .profile-install hr{
@@ -121,10 +152,75 @@ html{
 .profile h3{
     color: white;
 }
+
+.profile:hover svg, .profile:hover h3{
+    fill: black;
+    text-decoration: underline;
+}
+
 /* ********************
 ---LEFT-MENU-FINISH---
 ******************** */
 
+
+.left-menu-phone{
+    background-color: black;
+    color: rgb(113, 113, 113);
+    width: 50px;
+    height: calc(100vh - 90px);
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding-inline: 1em;
+    padding-top: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    display: none;
+}
+
+.search-menu-phone img{
+    width: 30px;
+    padding-top: .5em;
+    padding-bottom: 2em;
+}
+
+.search-menu-phone svg{
+    fill: rgb(113, 113, 113);
+    width: 25px;
+    padding-bottom: .3em;
+}
+
+.profile-install-phone{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: .5em;
+    gap: 2em;
+}
+
+.profile-install-phone svg:first-child{
+    fill: rgb(113, 113, 113);
+    width: 15px;
+}
+
+.profile-install-phone svg:last-child{
+    fill: white;
+    width: 30px;
+    height: 30px;
+    background-color: rgb(113, 113, 113);
+    border-radius: 50%;
+}
+
+@media (max-width: 645px){
+    .left-menu{
+        display: none;
+    }
+    .left-menu-phone{
+        display: inline-block;
+    }
+}
 
 /* ********************
 ---------HOME---------
@@ -137,28 +233,145 @@ html{
     top: 0;
     right: 0;
     overflow: scroll;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+@media (max-width: 645px){
+    .home{
+        width: calc(100% - 50px);
+    }
 }
 
 nav{
     margin-top: 90px;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 1.5em;
     color: rgb(113, 113, 113);
+    padding-top: 1em;
+}
+
+nav a, nav a:visited, nav a:link{
+    color: rgb(113, 113, 113);
+    text-decoration: none;
+    width: auto;
+}
+
+nav a:hover{
+    color: white;
+}
+
+@media (max-width: 850px){
+    .nav{
+        max-width: 295px;
+    }
+    nav div{
+        min-width: 97px;
+    }
+}
+
+nav hr{
+    width: 30%;
+    text-align: center;
+    
+}
+
+.recently{
+    padding-top: 2em;
+}
+
+.recently h2{
+    color: white;
+    padding-bottom: 1em;
+    font-size: 2rem;
 }
 
 .recently-container{
     display: flex;
+    flex-wrap: wrap;
     gap: 1em;
 }
 
+@media (max-width:1260px){
+    .recently-container{
+        max-width: 900px;
+    }
+    .recently-box{
+        min-width: 186.5px;
+    }
+    .foryou-box{
+        min-width: 186.5px;
+    }
+    .popular-box{
+        min-width: 186.5px;
+    }
+}
+
 .recently-box{
-    width: calc((100% - (5 * 1em)) / 6);
+    flex: 0 0 calc((100% - (5 * 1em)) / 6);
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.song-play{
+    position: relative;
+    width: 186.5px;
+    height: 186.5px;
 }
 
 .recently-box img{
     width: 100%;
+}
+
+.song-play i{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.411);
+    font-size: 4rem;
+    color: white;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 34%;
+    opacity: 0;
+}
+
+.song-play:hover{
+    background-color: rgba(0, 0, 0, 0.679);
+}
+
+.song-play:hover i{
+    opacity: 100;
+}
+
+.recently-box h3{
+    color: white;
+    padding-top: .8em;
+    padding-bottom: .3em;
+    padding-inline: .2em;
+}
+
+.recently-box div{
+    color: rgb(113, 113, 113);
+}
+
+.foryou{
+    padding-top: 3em;
+}
+
+.foryou h2{
+    font-size: 2rem;
+    color: white;
+}
+
+.foryou .under-title{
+    color: rgb(113, 113, 113);
+    padding-top: .5em;
+    padding-bottom: 2em;
 }
 
 .foryou-container{
@@ -175,6 +388,28 @@ nav{
     width: 100%;
 }
 
+.foryou-box h3{
+    color: white;
+    padding-top: .8em;
+    padding-bottom: .3em;
+}
+
+.popular{
+    padding-top: 3em;
+    padding-bottom: 3em;
+}
+
+.popular h2{
+    font-size: 2rem;
+    color: white;
+}
+
+.popular .under-title{
+    color: rgb(113, 113, 113);
+    padding-top: .5em;
+    padding-bottom: 2em;
+}
+
 .popular-container{
     display: flex;
     gap: 1em;
@@ -188,6 +423,12 @@ nav{
 .popular-box img{
     width: 100%;
     border-radius: 50%;
+}
+
+.popular-box h3{
+    color: white;
+    padding-top: .8em;
+    padding-bottom: .3em;
 }
 /* ********************
 ------HOME-FINISH-----
@@ -231,7 +472,7 @@ nav{
 }
 
 .track-player img{
-    width: 30%;
+    width: 50px;
 }
 
 .track-player h4{
@@ -309,10 +550,35 @@ nav{
 
 
 .upgrade-bar{
-    background-color: rgba(0, 0, 0, 0.444);
+    background-color: rgba(0, 0, 0, 0.343);
     height: 90px;
     width: calc(100% - 230px);
     position: fixed;
     top: 0;
     right: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 2em;
+}
+
+.upgrade-bar div{
+    color: white;
+    padding-inline: 3em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    border: 1px solid white;
+    border-radius: 2em;
+    transition: all .5s;
+}
+
+.upgrade-bar div:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+@media (max-width: 645px){
+    .upgrade-bar{
+        width: calc(100% - 50px);
+    }
 }
