@@ -170,7 +170,9 @@ html{
 ---LEFT-MENU-FINISH---
 ******************** */
 
-
+/* ********************
+---LEFT-MENU-PHONE---
+******************** */
 .left-menu-phone{
     background-color: black;
     color: rgb(113, 113, 113);
@@ -235,6 +237,17 @@ html{
         display: inline-block;
     }
 }
+/* ************************
+---LEFT-MENU-PHONE-FINISH--
+************************* */
+
+
+
+
+
+
+
+
 
 /* ********************
 ---------HOME---------
@@ -514,6 +527,13 @@ nav hr{
 ******************** */
 
 
+
+
+
+
+
+
+
 /* ********************
 --------PLAYER---------
 ******************** */
@@ -560,6 +580,54 @@ nav hr{
 
 .like-folder i{
     padding-inline: .3em;
+    font-size: medium;
+    color: rgb(193, 193, 193);
+}
+
+.like-folder i:hover{
+    cursor: pointer;
+    color: white;
+}
+
+.player-left-phone{
+    position: fixed;
+    bottom: 90px;
+    left: 50px;
+    height: 60px;
+    width: calc(100% - 50px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(32, 32, 32);
+    border-radius: 1em;
+    display: none;
+    
+}
+
+.track-player-phone{
+    display: flex;
+    align-items: center;
+}
+
+.track-player-phone img{
+    height: 60px;
+    aspect-ratio: 1 / 1;
+    padding: .5em;
+    border-radius: 1em;
+}
+
+.like-folder-phone i{
+    padding-right: .5em;
+    font-size: 2rem;
+    display: inline-block;
+}
+
+@media (max-width: 645px){
+    .player-left-phone{
+        display: block;
+        display: flex;
+
+    }
 }
 
 .player-center{
@@ -577,19 +645,12 @@ nav hr{
 .player-bttn i{
     flex: 0 1 auto;
     font-size: 2rem;
+    transition: all .3s;
 }
 
-.phone-bttn{
-    display: none;
-}
-
-@media (max-width:500px){
-    .phone-bttn{
-        display: block;
-    }
-    .player-bttn{
-        display: none;
-    }
+.player-bttn i:hover{
+    transform: scale(1.2);
+    cursor: pointer;
 }
 
 .player-line{
@@ -600,11 +661,16 @@ nav hr{
     gap: 1em;
 }
 
+.player-line .time:hover{
+    text-decoration: underline;
+}
+
 .time-line-big{
     height: 4px;
     flex: 0 1 425px;
     background-color: rgb(90, 90, 90);
     border-radius: 2em;
+    position: relative;
 }
 
 .time-line-small{
@@ -623,11 +689,21 @@ nav hr{
     gap: 1em;
 }
 
+.player-right i{
+    transition: all .3s;
+}
+
+.player-right i:hover{
+    transform: scale(1.4);
+    cursor: pointer;
+}
+
 .volume-line-big{
     height: 4px;
     flex: 0 1 125px;
     background-color: rgb(90, 90, 90);
     border-radius: 2em;
+    position: relative;
 }
 
 .volume-line-small{
@@ -635,6 +711,29 @@ nav hr{
     width: 28%;
     background-color: rgb(193, 193, 193);
     border-radius: 2em;
+}
+
+.time-line-bttn, .volume-line-bttn{
+    width: 15px;
+    aspect-ratio: 1 / 1;
+    background-color: white;
+    position: absolute;
+    top: -130%;
+    left: 26%;
+    border-radius: 50%;
+    display: none;
+}
+
+.player-line:hover .time-line-bttn, .volume-line-big:hover .volume-line-bttn{
+    display: inline-block;
+}
+
+.player-line:hover, .player-right:hover{
+    cursor: pointer;
+}
+
+.player-line:hover .time-line-small, .volume-line-big:hover .volume-line-small{
+    background-color: rgb(191, 241, 100);
 }
 
 @media (max-width: 1000px){
@@ -646,7 +745,7 @@ nav hr{
     }
 }
 
-@media (max-width: 650px){
+@media (max-width: 645px){
     .volume-line-big{
         display: none;
     }
@@ -655,10 +754,12 @@ nav hr{
     }
     .player-left{
         min-width: 0;
+        display: none;
     }
     .track-player div{
         display: none;
     }
+
 }
 
 /* ********************
