@@ -46,11 +46,26 @@ html{
     align-items: center;
     gap: .5em;
     padding-bottom: .5em;
+    position: relative;
 }
 
 .search-menu li svg{
     fill: rgb(113, 113, 113);
     width: 25px;
+}
+
+.green-left{
+    height: 25px;
+    width: 2px;
+    background-color: greenyellow;
+    position: absolute;
+    left: -1em;
+    top: 0;
+    display: none;
+}
+
+.search-menu li a:hover .green-left{
+    display: inline-block;
 }
 
 .search-menu li a:hover svg, .search-menu li a:hover div{
@@ -200,11 +215,36 @@ html{
     padding-bottom: 2em;
 }
 
-.search-menu-phone svg{
-    display: inline-block;
+.search-menu-home-phone{
+    padding-bottom: .15em;
+    position: relative;
+}
+
+.search-menu-home-phone svg{
     fill: rgb(113, 113, 113);
-    width: 25px;
-    padding-bottom: .3em;
+    width: 25px;  
+}
+
+.green-left-phone{
+    width: 2px;
+    height: 25px;
+    background-color: greenyellow;
+    position: absolute;
+    left: -1em;
+    top: 0;
+    display: none;
+}
+
+.search-menu-home-phone:hover{
+    cursor: pointer;
+}
+
+.search-menu-home-phone:hover .green-left-phone{
+    display: inline-block;
+}
+
+.search-menu-home-phone:hover svg{
+    fill: white;
 }
 
 .profile-install-phone{
@@ -221,12 +261,22 @@ html{
     width: 15px;
 }
 
+.profile-install-phone svg:first-child:hover{
+    fill: white;
+    cursor: pointer;
+}
+
 .profile-install-phone svg:last-child{
     fill: white;
     width: 30px;
     height: 30px;
     background-color: rgb(113, 113, 113);
     border-radius: 50%;
+}
+
+.profile-install-phone svg:last-child:hover{
+    cursor: pointer;
+    fill: black;
 }
 
 @media (max-width: 645px){
@@ -272,12 +322,33 @@ html{
 
 nav{
     margin-top: 90px;
+    height: 40px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     gap: 1.5em;
     color: rgb(113, 113, 113);
     padding-top: 1em;
+}
+
+nav a{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: .3em;
+}
+
+.green-nav{
+    height: 2px;
+    width: 50px;
+    background-color: greenyellow;
+    text-align: center;
+    display: none;
+}
+
+nav a:hover .green-nav{
+    display: inline-block;
 }
 
 nav a, nav a:visited, nav a:link{
@@ -306,7 +377,7 @@ nav hr{
 }
 
 .recently{
-    padding-top: 2em;
+    padding-top: 5em;
 }
 
 .recently h2{
@@ -564,7 +635,7 @@ nav hr{
 .track-player{
     display: flex;
     align-items: center;
-
+    position: relative;
 }
 
 .track-player img{
@@ -576,6 +647,30 @@ nav hr{
 
 .track-player div{
     display: inline-block;
+}
+
+.track-player div div:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.green-play-arrow{
+    background-color: rgba(172, 255, 47, 0.381);
+    border: .1px solid black;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: absolute;
+    left: 20%;
+    bottom: 53.5%;
+    display: none;
+}
+
+.green-play-arrow i{
+    color: black;
+    font-size: 1.3rem;
+    padding-top: 10%;
+    padding-left: 17%;
 }
 
 .like-folder i{
@@ -620,6 +715,22 @@ nav hr{
     padding-right: .5em;
     font-size: 2rem;
     display: inline-block;
+    color: rgb(193, 193, 193);
+}
+
+.like-folder-phone i:hover{
+    cursor: pointer;
+    color: white;
+}
+
+.track-player-phone div{
+    display: inline-block;
+}
+
+.track-player-phone div div:hover{
+    text-decoration: underline;
+    cursor: pointer;
+
 }
 
 @media (max-width: 645px){
