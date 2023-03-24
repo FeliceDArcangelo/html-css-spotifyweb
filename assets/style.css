@@ -11,7 +11,7 @@ html{
 
 .black-initial-color{
     animation: black-initial;
-    animation-duration: 2s;
+    animation-duration: 2.2s;
     position: fixed;
     top: 0;
     right: 0;
@@ -34,7 +34,7 @@ html{
         width: 100%;
         height: 100vh;
         z-index: 110;
-        background-color: rgba(0, 0, 0, 0.315);
+        background-color: rgba(0, 0, 0, 0);
     }
 }
 
@@ -46,7 +46,7 @@ html{
     width: 0;
     fill: rgb(28, 215, 96);
     animation: logo-initial;
-    animation-duration: 2s;
+    animation-duration: 3s;
 }
 
 @keyframes logo-initial{
@@ -55,20 +55,20 @@ html{
         right: calc(50% - 200px);
         bottom: calc(50% - 200px);
     }
-    30%{
+    20%{
         width: 700px;
         right: calc(50% - 350px);
         bottom: calc(50% - 350px);
     }
-    70%{
+    60%{
         width: 400px;
         right: calc(50% - 200px);
         bottom: calc(50% - 200px);
     }
     100%{
-        width: 2000px;
-        right: calc(50% - 1000px);
-        bottom: calc(50% - 1000px);
+        width: 100000px;
+        right: calc(50% - 50000px);
+        bottom: calc(50% - 50000px);
     }
 }
 
